@@ -54,6 +54,5 @@ UPDATE friends SET group='KILA' WHERE Cty='Halle'
 UPDATE friends SET hadHolidaysIn=2019 WHERE Nme='Arvid'
 UPDATE friends SET hadHolidaysIn=2020 WHERE Nme='Erik' OR Nme='Thomas' OR Nme='Markus' OR Nme='Christian' OR Nme='Daniel' 
 
-BACKUP DATABASE people;
-TO DISK = 'C:\databases\';
+BACKUP DATABASE people TO DISK = 'C:\databases\university.bak';
 DROP DATABASE people;
