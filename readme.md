@@ -1,0 +1,2 @@
+This collection contains the raw SQL standard syntax which may need to be adapted to the databasemanagment (DBMS) system u use. The DBMS u use may be MySQL.  
+SQL can be considered a guideline to all the various implementations that came and will come for relational DBMS.

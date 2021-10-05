@@ -1,3 +1,7 @@
+# caution pure SQL syntax used in here
+
+--
+
 # Handle a database.
 ```SQL
 CREATE DATABASE <dataBaseName>;
