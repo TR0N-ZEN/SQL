@@ -2,10 +2,10 @@
 ```SQL
 CREATE DATABASE <dataBaseName>;
 CREATE DATABASE people;
-BACKUP DATABASE <dataBaseName> TO DISK = <pathAsString\*.bak>;
 
-BACKUP DATABASE people TO DISK = 'C:\databases\people.bak';
+BACKUP DATABASE <dataBaseName> TO DISK = <pathAsString\*.bak>;
 BACKUP DATABASE <dataBaseName> TO DISK = <pathAsString\*.bak> WITH DIFFERENTIAL;
+BACKUP DATABASE people TO DISK = 'C:\databases\people.bak';
 
 DROP DATABASE <dataBaseName>;
 DROP DATABASE people;
@@ -14,7 +14,6 @@ DROP DATABASE people;
 # Handle tables.
 ```SQL
 CREATE TABLE <tableName> (<columnName> <dataType>, ... );
-
 CREATE TABLE friends (Nme varchar(255),Cty varchar(255),Addrs varchar(255),Brthdt varchar(255),phone int);
 CREATE TABLE colleagues (Nme varchar(255),Brthdt varchar(255),phone int,e-mail varchar(255));
 DROP TABLE colleagues; --delete table

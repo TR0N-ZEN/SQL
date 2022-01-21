@@ -24,7 +24,7 @@ A column holds an attribute/property.
 			CREATE TABLE <tableName> AS SELECT <columnName>, ... FROM <superTableName>;
 			```
 
-		+ ### Insert rows/entries/records into table.
+		+ ### Insert a row/entry/record into table.
 			```SQL
 			INSERT INTO <tableName> VALUES (<value1>, ...); 
 			INSERT INTO <tableName> (<columnX>,...,<columnZ>,...,<columnY>) VALUES (<valueX>,...,<valueZ>,...,<valueY>);
