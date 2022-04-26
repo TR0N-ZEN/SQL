@@ -1,29 +1,29 @@
-# Handle a database.
+A table is a list of homgenius data.  
+
+<br><hr>
+
+
 ```
-CREATE DATABASE <dataBaseName>;
-CREATE DATABASE people;
+CREATE TABLE <tablename> <...>;
+ALTER TABLE <tablename> <...>; --adds or removes heads of the table an so of all of it's entries
+DROP TABLE <tablename>; --delete table
+TRUNCATE TABLE <tablename>; --clears the content of the table but keeps heading/top row
 
-BACKUP DATABASE <dataBaseName> TO DISK = <pathAsString\*.bak>;
-BACKUP DATABASE people TO DISK = 'C:\databases\people.bak';
-
-BACKUP DATABASE <dataBaseName> TO DISK = <pathAsString\*.bak> WITH DIFFERENTIAL;
-BACKUP DATABASE people TO DISK = 'C:\databases\people.bak' WITH DIFFERENTIAL;
-
-DROP DATABASE <dataBaseName>;
-DROP DATABASE people;
+INSERT <...> INTO <table>;
+SELECT <...> FROM <tables>;
+UPDATE <table> SET <...> WHERE <...>
 ```
-
-# Handle tables.
+e.g.
 ```
-CREATE TABLE <table> (<attribute> <dataType>, ... );
-
 CREATE TABLE friends (name varchar(255),city varchar(255),Addrs varchar(255),Brthdt varchar(255),phone int);
 CREATE TABLE colleagues (name varchar(255),Brthdt varchar(255),phone int,e-mail varchar(255));
-DROP TABLE colleagues; --delete table
-TRUNCATE TABLE friends; --clears the content of the table but keeps heading/top row
+DROP TABLE colleagues;
+TRUNCATE TABLE friends; 
 ```
+<br><hr>
 
-## Create tables on the basis of information of another table.
+
+Create tables on the basis of information of another table.
 ```
 CREATE TABLE <table> AS SELECT <attribute>, ... FROM <supertable>;
 
@@ -32,6 +32,7 @@ CREATE TABLE primaryschoolfriends AS SELECT name, city, Addrs FROM friends;
 CREATE TABLE highschoolfriends AS SELECT name, city, Addrs FROM friends;
 CREATE TABLE univerityfriends AS SELECT name, city, Addrs FROM friends;
 ```
+
 
 ## Insert rows/entries/records into table.
 ```
@@ -117,13 +118,13 @@ SELECT SUM(<attribute>) FROM <table> WHERE <boolExpression>;
 ```
 
 _boolExprs_ with wildcards
-|Symbol|effect|
-|-|-|
-|%   |Represents zero or more characters   bl% finds bl, black, blue, and blob|
-|_   |Represents a single character   h_t finds hot, hat, and hit|
-|[]  |Represents any single character within the brackets   h[oa]t finds hot and hat, but not hit|
-|^   |Represents any character not in the brackets   h[^oa]t finds hit, but not hot and hat|
-|-   |Represents any single character within the specified range   c[a-b]t finds cat and cbt|
+| Symbol | effect                                                                                      |
+|--------|---------------------------------------------------------------------------------------------|
+| %      | Represents zero or more characters   bl% finds bl, black, blue, and blob                    |
+| _      | Represents a single character   h_t finds hot, hat, and hit                                 |
+| []     | Represents any single character within the brackets   h[oa]t finds hot and hat, but not hit |
+| ^      | Represents any character not in the brackets   h[^oa]t finds hit, but not hot and hat       |
+| -      | Represents any single character within the specified range   c[a-b]t finds cat and cbt      |
 ```
 SELECT * FROM friends WHERE city LIKE 'am%';
 SELECT * FROM friends WHERE city LIKE '%ü%';

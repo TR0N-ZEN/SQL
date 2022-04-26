@@ -1,11 +1,9 @@
 # Handle a database.
 ```SQL
 CREATE DATABASE <dataBaseName>;
-CREATE DATABASE people;
 
 BACKUP DATABASE <dataBaseName> TO DISK = <pathAsString\*.bak>;
 BACKUP DATABASE <dataBaseName> TO DISK = <pathAsString\*.bak> WITH DIFFERENTIAL;
-BACKUP DATABASE people TO DISK = 'C:\databases\people.bak';
 
 DROP DATABASE <dataBaseName>;
 DROP DATABASE people;
@@ -116,11 +114,11 @@ SELECT SUM(<columnName>) FROM <tableName> WHERE <boolExpression>;
 _boolExprs_ with wildcards
 |Symbol|effect|
 |-|-|
-|% 	|Represents zero or more characters 	bl% finds bl, black, blue, and blob|
-|_ 	|Represents a single character 	h_t finds hot, hat, and hit|
-|[]	|Represents any single character within the brackets 	h[oa]t finds hot and hat, but not hit|
-|^ 	|Represents any character not in the brackets 	h[^oa]t finds hit, but not hot and hat|
-|- 	|Represents any single character within the specified range 	c[a-b]t finds cat and cbt|
+|%   |Represents zero or more characters   bl% finds bl, black, blue, and blob|
+|_   |Represents a single character   h_t finds hot, hat, and hit|
+|[]  |Represents any single character within the brackets   h[oa]t finds hot and hat, but not hit|
+|^   |Represents any character not in the brackets   h[^oa]t finds hit, but not hot and hat|
+|-   |Represents any single character within the specified range   c[a-b]t finds cat and cbt|
 ```SQL
 SELECT * FROM friends WHERE Cty LIKE 'am%';
 SELECT * FROM friends WHERE Cty LIKE '%ü%';
