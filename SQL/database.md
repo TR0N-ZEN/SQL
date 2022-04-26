@@ -1,5 +1,5 @@
 Each server can hold zero or more databases.  
-Each database can hold zero or more tables.  
+Each database can hold zero or more [tables](./table/table.md).  
 
 <br>
 <br><hr>
@@ -20,6 +20,7 @@ BACKUP DATABASE <dataBaseName> TO DISK = <pathAsString\*.bak> WITH DIFFERENTIAL;
 e.g.
 ```
 BACKUP DATABASE people TO DISK = 'C:\databases\people.bak';
+BACKUP DATABASE people TO DISK = 'C:\databases\people.bak' WITH DIFFERENTIAL;
 ```
 <br><hr>
 
