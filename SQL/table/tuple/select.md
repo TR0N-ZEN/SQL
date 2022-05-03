@@ -12,7 +12,7 @@ SELECT * FROM <tableA>, <tableB>
 ```
 Each further cartesian product can be thought of as a nested binary cartesian product:  
 ```
-SELECT * FROM (...(SELECT * FROM (SELECT * FROM <tableA>, <tableB>), <tableC>)...) , <tableZ>  
+SELECT * FROM (...(SELECT * FROM (SELECT * FROM <tableA>, <tableB>), <tableC>)...), <tableZ>  
 ```
 is equivalent to:  
 ```
@@ -64,7 +64,7 @@ SELECT <attributes> FROM <tables> ORDER BY <attributeX> ASC, <attributeY> DESC;
 
 The `TOP` clause is used to specify the number of records to return
 ```SQL
-SELECT TOP <numb3r> FROM <tables> WHERE <boolExpression>;
+SELECT TOP <numb3r> FROM <tables>;
 ```
 `SELECT TOP <number> FROM <tables>`  
 
